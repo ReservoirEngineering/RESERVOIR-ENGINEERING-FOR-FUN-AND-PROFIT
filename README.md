@@ -1,2 +1,2 @@
 # RESERVOIR-ENGINEERING-FOR-FUN-AND-PROFIT
-Files to share along with the book
+Files to share along with the book which has not yet been published. The code itself has no copyright and may be freely used with NO NEED TO ATTRIBUTION. Given that, there are no guarantees or warranties of any kind as to accuracy or reliability and the author assumes no responsibility for how such codes are used or misused. Do not bother the author with questions about this code. The author used ai tools to clean up the format of this code as the author writes super sloppy code. The author also occasionally used ai to write the I/O and or graphics sections of the code.The author may or may not have checked those portions carefully as long as they worked.
