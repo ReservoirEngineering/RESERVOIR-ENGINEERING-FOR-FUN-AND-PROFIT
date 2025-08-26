@@ -1,10 +1,7 @@
 import numpy as np
-
-m = np.array([120.0, 90.0, 70.0])  # EMV
-sd = np.array([220.0, 140.0, 90.0])
-corr = np.array([[1.0, 0.8, 0.5],
-                 [0.8, 1.0, 0.2],
-                 [0.5, 0.2, 1.0]])
+m = np.array([5.0, 4.0, 2.0])
+sd = np.array([5.0, 2.0, 1.0])
+corr = np.identity(3)
 Sigma = np.outer(sd, sd) * corr
 
 def mean_variance_weights(m, Sigma, lam):
@@ -15,8 +12,8 @@ def mean_variance_weights(m, Sigma, lam):
         return np.ones_like(w_star) / len(w_star)
     return w_star / w_star.sum()
 
-for lam in [1e-4, 2e-4, 5e-4]:
+for lam in [0.01, 0.03, 0.07, 0.12]:
     w = mean_variance_weights(m, Sigma, lam)
     mu_p = w.dot(m)
     var_p = w.dot(Sigma).dot(w)
-    print(lam, "weights:", w, "mean:", mu_p, "stdev:", np.sqrt(var_p))
+    print(f"lambda: {lam:.4g}  weights: {np.round(w,3)}  mean: {mu_p:.2f}  stdev: {np.sqrt(var_p):.2f}")
